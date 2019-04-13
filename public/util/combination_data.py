@@ -1,12 +1,15 @@
-#-*- endcoding:utf-8 -*-
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:ZhangYunFei
+
 import collections
 import datetime
 import time
 import hashlib
 from urllib import parse
-from public.read_config.request_config_read import readRequest
+from public.read_config.request_config_read import ReadRequest
 
-class getData(object):
+class GetData(object):
 
     def __init__(self, data, token):
         self.data = data
@@ -58,13 +61,13 @@ class getData(object):
         res = sha256.hexdigest().lower()
         return res
 
-    def combinationData(self):
+    def combination_data(self):
         '''
         :param sig:
         :return:read_config
         '''
         self.data.update({"token": self.token})
-        readR = readRequest()
+        readR = ReadRequest()
         timestamp = int(time.mktime(time.strptime(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S')))
         self.data.update({"ts": timestamp})
         sig = '{}{}'.format(self.flatten_dict(self.data), readR.get_secretKey)
@@ -82,6 +85,6 @@ if __name__ == "__main__":
         "appId": 0,
         "d": {"id": 0},
         "token": token}
-    getdata = getData(data, token)
-    data = getdata.combinationData()
+    getdata = GetData(data, token)
+    data = getdata.combination_data()
     print(data)

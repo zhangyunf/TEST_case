@@ -1,1 +1,3 @@
-#-*- endcoding:utf-8 -*-
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author: ZhangYunFei

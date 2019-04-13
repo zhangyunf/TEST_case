@@ -1,7 +1,12 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:ZhangYunFei
+
+import json
 import requests
 from public.util.log import *
-from public.util.combination_data import getData
-import json
+from public.util.combination_data import GetData
+
 
 class RunMain(object):
 
@@ -67,7 +72,7 @@ if __name__ == '__main__':
             "dealPass": "Ryw6evDEinIjDQ33XJxe/8ju1Yzf5PTNcRY5IMxZFzY=",
             "pay_type": 1},
         "token": token}
-    getdata = getData(data1, token)
+    getdata = GetData(data1, token)
     da1 = getdata.combinationData()
     run = RunMain()
     re1 = run.run_main(url, "POST", da1, headers)

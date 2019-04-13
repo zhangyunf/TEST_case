@@ -1,13 +1,17 @@
-#-*- endcoding:utf-8
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:ZhangYunFei
+
 from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 
 
-class exceOperation(object):
+class ExcelOperation(object):
 
     def __init__(self, file_path):
         self.file_path = file_path
         self.wb = load_workbook(file_path)
+        self.reader_data = {}
 
     def open_sheet(self, sheet_name):
         '''
@@ -20,11 +24,10 @@ class exceOperation(object):
 
     def get_datas(self, sheet_name):
         '''
-        读取数据
+        读取数据，并
         :param sheet_name: sheet页名称
         '''
         st = self.open_sheet(sheet_name)
-        self.reader_data = {}
         for row in st.rows:
             lis = []
             for i in row:
@@ -35,11 +38,11 @@ class exceOperation(object):
         '''返回excel的数据'''
         return self.reader_data
 
-    def get_value(self, cellNum):
+    def get_value(self, cell_num):
         '''
         获取cell的值
         '''
-        return cellNum.value
+        return cell_num.value
 
     def get_cell_location(self, value):
         '''返回cell的位置'''
@@ -59,7 +62,7 @@ class exceOperation(object):
 if __name__ == "__main__":
     fileP = r"D:\测试\自动化\TEST-case\data\case.xlsx"
     sheetN = "case"
-    ex = exceOperation(fileP)
+    ex = ExcelOperation(fileP)
     ex.get_datas(sheetN)
     reader = ex.get_readers()
     for i, j in reader.items():

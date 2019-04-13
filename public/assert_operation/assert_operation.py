@@ -1,7 +1,10 @@
-#-*- endcoding:utf-8 -*-
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:ZhangYunFei
+
 from public.util.log import *
 
-class assertOperation(object):
+class AssertOperation(object):
 
     def assert_check(self, case, res):
         '''
@@ -9,6 +12,7 @@ class assertOperation(object):
         :param case: 案例事例
         :param requests_body: 请求响应体
         '''
+
         if case.expected_result != None:
             # 拆分断言
             check_list = case.expected_result.split(",")
@@ -22,7 +26,7 @@ class assertOperation(object):
                         else:
                             report += "\n检查点%s失败" % expect
                             log("案例%s执行失败，检查点%s失败" % (case.caseNum, expect))
-                    except:
+                    except Exception:
                         report += "\n检查点%s失败" % expect
                         log("案例%s执行失败，检查点%s失败" % (case.caseNum, expect))
 

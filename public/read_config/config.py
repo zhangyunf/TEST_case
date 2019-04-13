@@ -1,46 +1,57 @@
-#-*- endcoding:utf-8 -*-
-from public.util.config_operation import configOperation
-file_name = r"./config/config.ini"
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:ZhangYunFei
 
-class readConfig(configOperation):
+from public.util.config_operation import ConfigOperation
 
+#配置文件路径
+CONFIG_PATH = r"./config/config.ini"
+
+class ReadConfig(ConfigOperation):
+
+    ''' 获取配置文件中的信息 '''
     def __init__(self):
-        super(readConfig, self).__init__(file_name)
+        super(ReadConfig, self).__init__(CONFIG_PATH)
 
     @property
-    def get_failureColor(self):
-        failureColor = self.get_value("color", "failureColor")
-        return failureColor
+    def get_failure_color(self):
+        '''获取案例执行失败时，cell中渲染的颜色'''
+        failure_color = self.get_value("color", "failureColor")
+        return failure_color
 
     @property
-    def get_successColor(self):
-        successColor = self.get_value("color", "successColor")
-        return successColor
+    def get_success_color(self):
+        '''获取案例执行成功时，cell中渲染的颜色'''
+        success_color = self.get_value("color", "successColor")
+        return success_color
 
     @property
-    def get_casePath(self):
-        casePath = self.get_value("path", "casePath")
-        casePath = casePath.encode("gbk")
-        casePath = casePath.decode("utf-8")
-        return casePath
+    def get_case_path(self):
+        '''获取case.xlsx的文件路径'''
+        case_path = self.get_value("path", "casePath")
+        case_path = case_path.encode("gbk")
+        case_path = case_path.decode("utf-8")
+        return case_path
 
     @property
-    def get_requestsPath(self):
-        requestsPath = self.get_value("path", "requestsPath")
+    def get_requests_path(self):
+        '''获取请求数据配置文件路径'''
+        requests_path = self.get_value("path", "requestsPath")
 
-        return requestsPath
+        return requests_path
 
     @property
-    def get_requestsDataPath(self):
-        requestsDataPath =  self.get_value("path", "requestsDataPath")
-        requestsDataPath = requestsDataPath.encode("gbk")
-        requestsDataPath = requestsDataPath.decode("utf-8")
-        return requestsDataPath
+    def get_requests_data_path(self):
+        '''获取请求数据文件路径'''
+        requests_data_path = self.get_value("path", "requestsDataPath")
+        requests_data_path = requests_data_path.encode("gbk")
+        requests_data_path = requests_data_path.decode("utf-8")
+        return requests_data_path
 
 
 if __name__ == "__main__":
-    con = readConfig()
-    a = con.get_casePath.encode("gbk")
+    con = ReadConfig()
+    a = con.get_case_path.encode("gbk")
     b = a.decode("utf-8")
     print(a, b)
 

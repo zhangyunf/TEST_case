@@ -1,28 +1,35 @@
-#-*- endcoding:utf-8 -*-
-from public.util.config_operation import configOperation
-from public.read_config.config import readConfig
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:ZhangYunFei
 
-section = "requests"
+from public.util.config_operation import ConfigOperation
+from public.read_config.config import ReadConfig
 
-class readRequest(configOperation):
+# 配置文件中请求配置的section名称
+SECTION = "requests"
+
+class ReadRequest(ConfigOperation):
 
     def __init__(self):
-        self.readConfig = readConfig()
-        super(readRequest, self).__init__(self.readConfig.get_requestsPath)
+        self.readConfig = ReadConfig()
+        super(ReadRequest, self).__init__(self.readConfig.get_requests_path)
 
     @property
     def get_url(self):
-        return self.get_value(section, "url")
+        '''获取网址'''
+        return self.get_value(SECTION, "url")
 
     @property
     def get_secretKey(self):
-        return self.get_value(section, "secretKey")
+        '''获取secrekey'''
+        return self.get_value(SECTION, "secretKey")
 
     @property
     def get_token(self):
-        return self.get_value(section, "token")
+        '''获取token'''
+        return self.get_value(SECTION, "token")
 
 
 
 if __name__ == "__main__":
-    con = configOperation()
+    con = ConfigOperation()

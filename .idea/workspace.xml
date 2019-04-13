@@ -2,20 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="318e7a34-022e-4257-a1ab-d3c8fc6f7024" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TEST-case.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TEST-case.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/case.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/case_singleton.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/case_singleton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/requests_config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/requests_config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101444.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101448.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101451.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101557.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101603.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101604.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101606.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101607.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101610.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101616.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/201904101620.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111639.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111653.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111656.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111704.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111713.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111716.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111723.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111727.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111730.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111731.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111737.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111740.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111741.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111746.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111749.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111755.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/201904111759.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/run_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/run_case.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assert_operation/assert_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/assert_operation/assert_operation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/read_config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/read_config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/read_config/read_requests_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/read_config/read_requests_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/read_config/request_config_read.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/read_config/request_config_read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/util/combination_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/util/combination_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/util/config_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/util/config_operation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/util/excel_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/util/excel_operation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/util/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/util/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/util/my_requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/util/my_requests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,72 +48,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.py">
+        <entry file="file://$PROJECT_DIR$/main/run_case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+            <state relative-caret-position="1052">
+              <caret line="74" column="20" lean-forward="true" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+              <folding>
+                <element signature="e#67#112#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/run_case.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assert_operation/assert_operation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/util/log.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#25#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/installPython/Lib/logging/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="1382" selection-start-line="1382" selection-end-line="1382" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/util/my_requests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+            <state relative-caret-position="72">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/read_config/request_config_read.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#67#123#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,32 +83,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/case_singleton.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="e#25#51#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/read_config/read_requests_data.py">
+        <entry file="file://$PROJECT_DIR$/case/case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1075">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-              <folding>
-                <element signature="e#25#73#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/requests_config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="162">
+              <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -145,6 +113,8 @@
       <find>flatten_dict</find>
       <find>report</find>
       <find>print</find>
+      <find>requests</find>
+      <find>caseList</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,32 +139,33 @@
         <option value="$PROJECT_DIR$/read_config/request_config_read.py" />
         <option value="$PROJECT_DIR$/read_config/config.py" />
         <option value="$PROJECT_DIR$/case/read_case.py" />
-        <option value="$PROJECT_DIR$/public/read_config/request_config_read.py" />
         <option value="$PROJECT_DIR$/main/run_data.py" />
         <option value="$PROJECT_DIR$/public/assert/assert_operation.py" />
-        <option value="$PROJECT_DIR$/public/util/combination_data.py" />
-        <option value="$PROJECT_DIR$/run.py" />
-        <option value="$PROJECT_DIR$/public/util/excel_operation.py" />
         <option value="$PROJECT_DIR$/data/requestsData.json" />
-        <option value="$PROJECT_DIR$/public/util/config_operation.py" />
         <option value="$PROJECT_DIR$/config/config.ini" />
-        <option value="$PROJECT_DIR$/public/read_config/config.py" />
-        <option value="$PROJECT_DIR$/public/util/log.py" />
-        <option value="$PROJECT_DIR$/case/case.py" />
-        <option value="$PROJECT_DIR$/public/read_config/read_requests_data.py" />
-        <option value="$PROJECT_DIR$/case/case_singleton.py" />
         <option value="$PROJECT_DIR$/config/requests_config.ini" />
-        <option value="$PROJECT_DIR$/public/util/my_requests.py" />
-        <option value="$PROJECT_DIR$/main/run_case.py" />
+        <option value="$PROJECT_DIR$/case/__init__.py" />
+        <option value="$PROJECT_DIR$/case/case.py" />
         <option value="$PROJECT_DIR$/public/assert_operation/assert_operation.py" />
+        <option value="$PROJECT_DIR$/public/read_config/read_requests_data.py" />
+        <option value="$PROJECT_DIR$/public/util/combination_data.py" />
+        <option value="$PROJECT_DIR$/public/util/config_operation.py" />
+        <option value="$PROJECT_DIR$/public/util/excel_operation.py" />
+        <option value="$PROJECT_DIR$/public/util/log.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/case/case_singleton.py" />
+        <option value="$PROJECT_DIR$/public/read_config/config.py" />
+        <option value="$PROJECT_DIR$/public/read_config/request_config_read.py" />
+        <option value="$PROJECT_DIR$/main/run_case.py" />
+        <option value="$PROJECT_DIR$/public/util/my_requests.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="396" />
-    <option name="y" value="11" />
-    <option name="width" value="936" />
-    <option name="height" value="744" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1573" />
+    <option name="y" value="-157" />
+    <option name="width" value="1440" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -204,33 +175,49 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="TEST-case" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TEST-case" type="462c0819:PsiDirectoryNode" />
+              <item name="TEST_case" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TEST_case" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TEST-case" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TEST-case" type="462c0819:PsiDirectoryNode" />
+              <item name="TEST_case" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TEST_case" type="462c0819:PsiDirectoryNode" />
               <item name="case" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="TEST-case" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TEST-case" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="TEST_case" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TEST_case" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TEST_case" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TEST_case" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TEST_case" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TEST_case" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TEST_case" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TEST_case" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test_UI" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -241,17 +228,17 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\project\TEST-case\config\data" />
+      <recent name="C:\project\TEST-case\config" />
+      <recent name="C:\project\TEST-case\util" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\测试\自动化\TEST-case\public" />
       <recent name="D:\测试\自动化\TEST-case" />
       <recent name="D:\接口\TEST-case\config" />
       <recent name="D:\接口\TEST-case\config\data" />
       <recent name="C:\project\TEST-case\config\data" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\project\TEST-case\config\data" />
-      <recent name="C:\project\TEST-case\config" />
-      <recent name="C:\project\TEST-case\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -403,15 +390,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-1573" y="-157" width="1440" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12946428" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25440452" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2147541" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30983606" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6590164" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2626506" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.696011" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -450,209 +438,195 @@
     <entry file="file://$PROJECT_DIR$/config/__init__.py" />
     <entry file="file://$PROJECT_DIR$/config/read_req.py" />
     <entry file="file://$PROJECT_DIR$/config/data/data1.csv" />
-    <entry file="file://D:/installPython/Lib/site-packages/requests/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="940" selection-start-line="940" selection-end-line="940" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1677698097/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
-          <caret line="896" column="6" selection-start-line="896" selection-start-column="6" selection-end-line="896" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/installPython/Lib/site-packages/requests/utils.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1677698097/builtins.py" />
     <entry file="file://D:/loadrunner/WebTours/xitami.cfg" />
-    <entry file="file://D:/installPython/Lib/site-packages/requests/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2875">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/installPython/Lib/site-packages/requests/api.py" />
     <entry file="file://$PROJECT_DIR$/public/read_config/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config/data/order.json" />
     <entry file="file://$PROJECT_DIR$/config/data/data.csv" />
     <entry file="file://$PROJECT_DIR$/util/send_email.py" />
-    <entry file="file://D:/installPython/Lib/zipfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="1289" column="26" lean-forward="true" selection-start-line="1289" selection-start-column="26" selection-end-line="1289" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/installPython/Lib/site-packages/openpyxl/reader/excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="279" column="4" selection-start-line="279" selection-start-column="4" selection-end-line="279" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/installPython/Lib/zipfile.py" />
+    <entry file="file://D:/installPython/Lib/site-packages/openpyxl/reader/excel.py" />
     <entry file="file://$PROJECT_DIR$/case/read_case.py" />
     <entry file="file://$PROJECT_DIR$/log/201904081845.log" />
-    <entry file="file://$PROJECT_DIR$/public/read_config/request_config_read.py">
+    <entry file="file://D:/installPython/Lib/configparser.py" />
+    <entry file="file://D:/installPython/Lib/site-packages/openpyxl/workbook/workbook.py" />
+    <entry file="file://$PROJECT_DIR$/log/201904091420.log" />
+    <entry file="file://D:/installPython/Lib/site-packages/openpyxl/styles/fills.py" />
+    <entry file="file:///192.168.55.103/Public/测试案例管理/接口测试/requestsData.json" />
+    <entry file="file://$PROJECT_DIR$/log/201904101200.log" />
+    <entry file="file://D:/installPython/Lib/logging/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/openpyxl/writer/excel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="577">
+          <caret line="170" column="33" lean-forward="true" selection-start-line="170" selection-start-column="33" selection-end-line="170" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/installPython/Lib/configparser.py">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="629" selection-start-line="629" selection-end-line="629" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/util/combination_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="-955">
+          <caret line="230" column="63" lean-forward="true" selection-start-line="230" selection-start-column="63" selection-end-line="230" selection-end-column="63" />
           <folding>
-            <element signature="e#25#43#0" expanded="true" />
+            <element signature="e#1189#1260#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/installPython/Lib/site-packages/openpyxl/workbook/workbook.py">
+    <entry file="file://$PROJECT_DIR$/config/requests_config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="276" selection-start-line="276" selection-end-line="276" />
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/201904091420.log" />
-    <entry file="file://D:/installPython/Lib/site-packages/openpyxl/styles/fills.py">
+    <entry file="file://$PROJECT_DIR$/data/requestsData.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="285">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/requestsData.json" />
+    <entry file="file://$PROJECT_DIR$/case/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assert_operation/assert_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/util/excel_operation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="369">
+          <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
           <folding>
             <element signature="e#21#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/util/config_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/read_config/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:////192.168.55.103/Public/测试案例管理/接口测试/requestsData.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/201904101200.log" />
-    <entry file="file://$PROJECT_DIR$/case/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="20" column="64" lean-forward="true" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/read_config/read_requests_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#25#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/requests_config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/util/my_requests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/case_singleton.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#25#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/installPython/Lib/logging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="1382" selection-start-line="1382" selection-end-line="1382" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/util/log.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="380">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding>
             <element signature="e#25#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assert_operation/assert_operation.py">
+    <entry file="file://$PROJECT_DIR$/config/config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="133">
+          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/util/config_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/util/combination_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" />
+          <folding>
+            <element signature="e#25#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/read_config/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/read_config/read_requests_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="e#67#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/read_config/request_config_read.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="e#67#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/case_singleton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/run_case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+        <state relative-caret-position="1052">
+          <caret line="74" column="20" lean-forward="true" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#67#112#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/util/my_requests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

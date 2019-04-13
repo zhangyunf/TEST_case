@@ -1,39 +1,42 @@
-#-*- endcoding:utf-8 -*-
-from case.case import case
-from public.util.excel_operation import exceOperation
-from public.read_config.config import readConfig
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:ZhangYunFei
+
+from case.case import CaseModel
+from public.util.excel_operation import ExcelOperation
+from public.read_config.config import ReadConfig
 from public.util.log import *
 
-def singletonDecorator(cls, *args, **kwargs):
+def SingletonDecorator(cls, *args, **kwargs):
     instance = {}
 
-    def wrapperSingleton(*args, **kwargs):
+    def wrapper_singleton(*args, **kwargs):
         if cls not in instance:
             instance[cls] = cls(*args, **kwargs)
-            return  instance[cls]
-    return wrapperSingleton
+            return instance[cls]
+    return wrapper_singleton
 
 
-@singletonDecorator
-class caseSingleton(object):
+@SingletonDecorator
+class CaseSingleton(object):
 
     def __init__(self):
-        self.caseList = []
+        self.case_list = []
         self.relevance_data = {}
 
     def read_case(self):
         '''读取case数据'''
         try:
-            config = readConfig()
-            exce_operation = exceOperation(config.get_casePath)
-            exce_operation.get_datas("case")
-            reader = exce_operation.get_readers()
-            for key, j in reader.items():
-                if key != "CaseNum" and key != None:
-                    case_data = case(j)
-                    self.caseList.append(case_data)
+            config = ReadConfig()
+            excel_operation = ExcelOperation(config.get_case_path)
+            excel_operation.get_datas("case")
+            reader = excel_operation.get_readers()
+            for k, v in reader.items():
+                if k != "CaseNum" and k != None:
+                    case_data = CaseModel(v)
+                    self.case_list.append(case_data)
             log("读取案例数据成功")
-        except:
+        except Exception:
             log("读取案例数据失败")
 
     def save_relevance_data(self, case, res):
@@ -54,24 +57,3 @@ class caseSingleton(object):
                         log(res)
             # 设置案例执行状态为失败
             case.set_actual_result("False", report)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,7 +1,11 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+# Author:ZhangYunFei
+
 import configparser
 
 
-class configOperation(object):
+class ConfigOperation(object):
     def __init__(self, file_name):
         self.conf = configparser.ConfigParser()
         self.conf.read(file_name)
