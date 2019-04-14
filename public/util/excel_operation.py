@@ -35,17 +35,15 @@ class ExcelOperation(object):
             self.reader_data.update({lis[0].value: lis})
 
     def get_readers(self):
-        '''返回excel的数据'''
+        # 返回excel的数据
         return self.reader_data
 
     def get_value(self, cell_num):
-        '''
-        获取cell的值
-        '''
+        # 获取cell的值
         return cell_num.value
 
     def get_cell_location(self, value):
-        '''返回cell的位置'''
+        # 返回cell的位置
         return "%s%d" % (value.coordinate, value.column)
 
     def set_cell(self, cell, color, content=None):

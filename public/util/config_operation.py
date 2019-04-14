@@ -11,7 +11,7 @@ class ConfigOperation(object):
         self.conf.read(file_name)
 
     def get_value(self, section, option):
-        '''获取数据'''
+        # 获取数据
         return self.conf.get(section=section, option=option)
 
 

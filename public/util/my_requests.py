@@ -20,11 +20,12 @@ class RunMain(object):
         '''
         try:
             res = requests.get(url=url, headers=headers, json=data)
+        except Exception as error:
+            log("GET:%s发送发成错误%s" % (url, error))
+            return False
+        else:
             log("GET:%s发送成功" % url)
             return res.text
-        except:
-            log("GET:%s发送失败" % url)
-            return False
 
     def send_post(self, url, data, headers=None):
         '''
@@ -36,11 +37,12 @@ class RunMain(object):
         '''
         try:
             res = requests.post(url, headers=headers, data=json.dumps(data))
+        except Exception as error:
+            log("POST:%s发送发生错误%s" % (url, error))
+            return False
+        else:
             log("POST:%s发送成功" % url)
             return res.text
-        except Exception:
-            log("POST:%s发送失败" % url)
-            return False
 
 
     def run_main(self, url,method, data=None, headers=None):
@@ -53,7 +55,12 @@ class RunMain(object):
             res = self.send_get(url, headers, data)
         elif method == 'POST':
             res = self.send_post(url, data, headers)
-        return json.loads(res)
+        try:
+            return json.loads(res)
+        except Exception as error:
+            log("接受数据个数错误%s，数据为%s" % (error, res))
+            return None
+
 
 
 

@@ -26,9 +26,9 @@ class AssertOperation(object):
                         else:
                             report += "\n检查点%s失败" % expect
                             log("案例%s执行失败，检查点%s失败" % (case.caseNum, expect))
-                    except Exception:
+                    except Exception as error:
                         report += "\n检查点%s失败" % expect
-                        log("案例%s执行失败，检查点%s失败" % (case.caseNum, expect))
+                        log("案例%s执行失败，检查点%s失败，发生错误%s" % (case.caseNum, expect, error))
 
             if report == "":
                 case.set_actual_result("Success")

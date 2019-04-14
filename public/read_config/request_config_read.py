@@ -16,17 +16,17 @@ class ReadRequest(ConfigOperation):
 
     @property
     def get_url(self):
-        '''获取网址'''
+        # 获取网址
         return self.get_value(SECTION, "url")
 
     @property
     def get_secretKey(self):
-        '''获取secrekey'''
+        # 获取secrekey
         return self.get_value(SECTION, "secretKey")
 
     @property
     def get_token(self):
-        '''获取token'''
+        # 获取token
         return self.get_value(SECTION, "token")
 
 

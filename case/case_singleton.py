@@ -35,9 +35,10 @@ class CaseSingleton(object):
                 if k != "CaseNum" and k != None:
                     case_data = CaseModel(v)
                     self.case_list.append(case_data)
+        except Exception as error:
+            log("读取案例数据发生错误%s", error)
+        else:
             log("读取案例数据成功")
-        except Exception:
-            log("读取案例数据失败")
 
     def save_relevance_data(self, case, res):
         '''
@@ -50,10 +51,11 @@ class CaseSingleton(object):
                 if relevance != "" and relevance != None:
                     try:
                         self.relevance_data.update(eval(relevance))
-                        log("保存%s成功" % relevance)
-                    except:
+                    except Exception as error:
                         report = "\n保存%s失败" % relevance
-                        log("保存%s失败" % relevance)
+                        log("保存%s发生错误%s" % (relevance, error))
                         log(res)
+                    else:
+                        log("保存%s成功" % relevance)
             # 设置案例执行状态为失败
             case.set_actual_result("False", report)

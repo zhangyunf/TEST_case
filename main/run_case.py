@@ -51,8 +51,8 @@ class RunCase(object):
                         log("案例%s执行失败" % case.caseNum)
                     else:
                         log("案例%s执行成功" % case.caseNum)
-                except Exception:
-                    log("执行案例%s失败" % case.caseNum)
+                except Exception as error:
+                    log("执行案例%s发生错误%s" % case.caseNum, error)
 
     def save_assert(self, case, res):
         # 保存依赖数据的
@@ -78,8 +78,8 @@ class RunCase(object):
                         case.set_actual_result("Flase", "执行失败，日志为空。")
                     color = config.get_success_color if "Success" in case.actual_result else config.get_failure_color
                     excel_operation.set_cell(reader[case.caseNum][-1], color, case.actual_result)
-                except Exception:
-                    log("测试案例%s测试报告生成失败" % case.caseNum)
+                except Exception as error:
+                    log("测试案例%s测试报告生成发生错误%s" % case.caseNum, error)
                     continue
         log("测试报告生成完成")
 
