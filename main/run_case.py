@@ -17,7 +17,6 @@ class RunCase(object):
         self.case_singleton.read_case()
         self.read_requests_data = ReadRequestsData()
         self.requests = RunMain()
-        self.token = ReadRequest().get_token
         self.host = ReadRequest().get_url
         self.assert_operation = AssertOperation()
 
@@ -28,21 +27,25 @@ class RunCase(object):
                     log("开始执行案例%s" % case.caseNum)
                     # 读取json
                     requests_data = self.read_requests_data.get_request_data(case, self.case_singleton.relevance_data)
-                    # 整理数据
-                    get_data = GetData(requests_data, self.token)
-                    da1 = get_data.combination_data()
                     # 发送请求
                     res = ""
-                    if case.is_headers == "YES":
-                        headers = self.read_requests_data.get_requests_header(case)
+                    if "YES" in case.is_headers:
+                        # 整理数据
+                        # 获取token
+                        token = self.case_singleton.relevance_data[case.is_headers.split(",")[-1]]
+                        get_data = GetData(requests_data, token)
+                        da1 = get_data.combination_data()
+                        headers = self.read_requests_data.get_requests_header(case, token)
                         res = self.requests.run_main(self.host + case.url, case.requests_type, da1, headers)
                         if res != None:
                             self.save_assert(case, res)
                         else:
                             log("获取返回值为空")
                             case.set_actual_result("False", "获取返回值为空")
-
-                    elif case.is_headers == "NO":
+                    elif "NO" in case.is_headers:
+                        # 整理数据
+                        get_data = GetData(requests_data)
+                        da1 = get_data.combination_data()
                         res = self.requests.run_main(self.host + case.url, case.requests_type, da1)
                         self.save_assert(case, res)
                     # 补充失败日志
@@ -77,7 +80,7 @@ class RunCase(object):
                     if case.actual_result == None:
                         case.set_actual_result("Flase", "执行失败，日志为空。")
                     color = config.get_success_color if "Success" in case.actual_result else config.get_failure_color
-                    excel_operation.set_cell(reader[case.caseNum][-1], color, case.actual_result)
+                    excel_operation.set_cell(reader[case.caseNum][13], color, case.actual_result)
                 except Exception as error:
                     log("测试案例%s测试报告生成发生错误%s" % case.caseNum, error)
                     continue

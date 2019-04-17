@@ -3,8 +3,8 @@
 # Author:ZhangYunFei
 
 from public.read_config.config import ReadConfig
-from public.read_config.request_config_read import ReadRequest
 from public.util.log import *
+import json
 
 class ReadRequestsData(object):
 
@@ -16,8 +16,7 @@ class ReadRequestsData(object):
         self.reader = {}
         try:
             with open(file_path, "r", encoding="utf-8") as requests_data_file:
-                requests_data = requests_data_file.read()
-                self.reader = eval(requests_data)
+                self.reader = json.load(requests_data_file)
         except Exception as error:
             log("获取全部请求数据发生错误%s!", error)
         else:
@@ -34,11 +33,12 @@ class ReadRequestsData(object):
                 relenance_case = case.relevance_case.split(",")
                 # 替换依赖数据
                 for exchange_data, exchange_case in zip(exchange_list, relenance_case):
-                    try:
-                        eval(exchange_data)
-                    except Exception as error:
-                        log("更换%s中保存的数据%s发生错误%s" % (exchange_case, exchange_data, error))
-                        case.set_actual_result("False", "\n更换数据失败%s" % exchange_data)
+                    if exchange_data != "":
+                        try:
+                            exec(exchange_data)
+                        except Exception as error:
+                            log("更换%s中保存的数据%s发生错误%s" % (exchange_case, exchange_data, error))
+                            case.set_actual_result("False", "\n更换数据失败%s" % exchange_data)
         except Exception as error:
             log("获取%s的请求数据发生错误%s" % case.caseNum, error)
             return False
@@ -47,10 +47,10 @@ class ReadRequestsData(object):
             return req_data
 
 
-    def get_requests_header(self, case):
+    def get_requests_header(self, case, token):
         # 将对应的token替换进headers并返回headers
         headers = self.reader[case.requests_data][1]
-        headers["token"] = ReadRequest().get_token
+        headers["token"] = token
         log("获取%s的heasers数据成功" % case.caseNum)
         return headers
 

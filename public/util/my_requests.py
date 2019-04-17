@@ -36,6 +36,7 @@ class RunMain(object):
         :return: 请求响应体，如果请求失败则返回False
         '''
         try:
+
             res = requests.post(url, headers=headers, data=json.dumps(data))
         except Exception as error:
             log("POST:%s发送发生错误%s" % (url, error))
@@ -70,21 +71,12 @@ if __name__ == '__main__':
     url = "http://192.168.55.105/v1/funds/"
     token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMwMzcxNDA2MjQxOTk2ODAwLCJwaCI6IiIsImVtIjoiMTAxQHEuY29tIiwiYyI6IiIsImRlIjoiV2luZG93cyAxMC9DaHJvbWU3My4wLjM2ODMuODYiLCJpcCI6IjE5Mi4xNjguMTEzLjIzMCIsIm9zIjozLCJpYXQiOjE1NTQwOTc3NDB9.q7rVokSG_CeEoxI1buwVvrl0WBJvTt_oHOilkXGnwq4"
     headers = {"Content-Type": "application/json", "token": token}
-    data1 = {
-        "a": "fundBuy",
-        "appId": 0,
-        "d": {
-            "productId": 1,
-            "money": 0.1,
-            "dealPass": "Ryw6evDEinIjDQ33XJxe/8ju1Yzf5PTNcRY5IMxZFzY=",
-            "pay_type": 1},
-        "token": token}
-    getdata = GetData(data1, token)
+    data1 = {"a":"fundProductList","appId":0,"d":{"pageSize":10,"pageNo":1,"productId":0}}
+    getdata = GetData(data1)
     da1 = getdata.combinationData()
     run = RunMain()
     re1 = run.run_main(url, "POST", da1, headers)
-    if re1["r"] != 0:
-        print("%s" % re1)
+    print(re1)
 
 
 

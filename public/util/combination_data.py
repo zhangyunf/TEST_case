@@ -11,7 +11,7 @@ from public.read_config.request_config_read import ReadRequest
 
 class GetData(object):
 
-    def __init__(self, data, token):
+    def __init__(self, data, token=None):
         self.data = data
         self.token = token
 
@@ -41,7 +41,7 @@ class GetData(object):
         """
         od = collections.OrderedDict()
         for k, v in sorted(self._flatten_dict(dic).items(), key=lambda x: x[0]):
-            if v != "":
+            if v != "" and v != None:
                 od[k] = v
         res = parse.urlencode(od)
         return res

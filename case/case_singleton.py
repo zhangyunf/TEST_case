@@ -57,5 +57,9 @@ class CaseSingleton(object):
                         log(res)
                     else:
                         log("保存%s成功" % relevance)
-            # 设置案例执行状态为失败
-            case.set_actual_result("False", report)
+            if report != "":
+                # 设置案例执行状态为失败
+                case.set_actual_result("False", report)
+
+
+
