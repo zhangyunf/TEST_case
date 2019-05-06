@@ -34,9 +34,9 @@ class Template(object):
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>接口自动化测试报告</title>
-    <meta name="generator" content="HTMLTestRunner 0.8.2.1"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
 <style type="text/css" media="screen">
 body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 100%; }
 
@@ -71,6 +71,10 @@ body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;pad
 <head>
     <title>%(title)s</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     %(stylesheet)s
 </head>
 <body>
@@ -78,13 +82,14 @@ body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;pad
 output_list = Array();
 
 /* level - 0:Summary; 1:Failed; 2:All */
+
 function showCase(level) {
     trs = document.getElementsByTagName("tr");
     for (var i = 0; i < trs.length; i++) {
         tr = trs[i];
         id = tr.id;
         if (id.substr(0,2) == 'ft') {
-            if (level < 1) {
+            if (level == 2 || level == 0 ) {
                 tr.className = 'hiddenRow';
             }
             else {
@@ -92,22 +97,36 @@ function showCase(level) {
             }
         }
         if (id.substr(0,2) == 'pt') {
-            if (level > 1) {
-                tr.className = '';
+            if (level < 2) {
+                tr.className = 'hiddenRow';
             }
             else {
-                tr.className = 'hiddenRow';
+                tr.className = '';
             }
         }
     }
-}
 
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
 
 function showClassDetail(cid, count) {
     var id_list = Array(count);
     var toHide = 1;
     for (var i = 0; i < count; i++) {
-        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
         tid = 'f' + tid0;
         tr = document.getElementById(tid);
         if (!tr) {
@@ -121,30 +140,17 @@ function showClassDetail(cid, count) {
     }
     for (var i = 0; i < count; i++) {
         tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
         if (toHide) {
-            document.getElementById('div_'+tid).style.display = 'none'
             document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
         }
         else {
             document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
         }
     }
 }
-
-
-function showTestDetail(div_id){
-    var details_div = document.getElementById(div_id)
-    var displayState = details_div.style.display
-    // alert(displayState)
-    if (displayState != 'block' ) {
-        displayState = 'block'
-        details_div.style.display = 'block'
-    }
-    else {
-        details_div.style.display = 'none'
-    }
-}
-
 
 function html_escape(s) {
     s = s.replace(/&/g,'&amp;');
@@ -152,22 +158,7 @@ function html_escape(s) {
     s = s.replace(/>/g,'&gt;');
     return s;
 }
-
-/* obsoleted by detail in <div>
-function showOutput(id, name) {
-    var w = window.open("", //url
-                    name,
-                    "resizable,scrollbars,status,width=800,height=450");
-    d = w.document;
-    d.write("<pre>");
-    d.write(html_escape(output_list[id]));
-    d.write("\n");
-    d.write("<a href='javascript:window.close()'>close</a>\n");
-    d.write("</pre>\n");
-    d.close();
-}
-*/
---></script>
+</script>
 
 %(heading)s
 %(report)s
@@ -221,14 +212,15 @@ table       { font-size: 100%; }
 
 
     # ------------------------------------------------------------------------
-    # Report
+    # ReportREPORT_TMPL
     #
 
     REPORT_TMPL = """
-<p id='show_detail_line'>概要
-<a href='javascript:showCase(0)'>失败</a>
-<a href='javascript:showCase(1)'>通过</a>
-<a href='javascript:showCase(2)'>共计</a>
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ %(summary)s }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ %(faile)s }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ %(success_count)s }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ %(all)s }</a>
 </p>
 <table id='result_table'>
 <colgroup>
@@ -238,7 +230,7 @@ table       { font-size: 100%; }
 <col align='right' />
 <col align='right' />
 </colgroup>
-<tr id='header_row'>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 14px;">
     <td>用例集/测试用例</td>
     <td>总计</td>
     <td>通过</td>
@@ -246,7 +238,7 @@ table       { font-size: 100%; }
     <td>详细</td>
 </tr>
 %(test_list)s
-<tr id='total_row'>
+<tr id='total_row' class="text-center active">
     <td>总计</td>
     <td>%(count)s</td>
     <td>%(Pass)s</td>
@@ -258,11 +250,11 @@ table       { font-size: 100%; }
 
     REPORT_CLASS_TMPL = r"""
 <tr class='%(style)s'>
-    <td>%(desc)s</td>
-    <td>%(count)s</td>
-    <td>%(Pass)s</td>
-    <td>%(fail)s</td>
-    <td><a href="javascript:showClassDetail('%(cid)s',%(count)s)">Detail</a></td>
+    <td class="text-center">%(desc)s</td>
+    <td class="text-center">%(count)s</td>
+    <td class="text-center">%(Pass)s</td>
+    <td class="text-center">%(fail)s</td>
+    <td class="text-center"><a href="javascript:showClassDetail('%(cid)s',%(count)s)">Detail</a></td>
 </tr>
 """ # variables: (style, desc, count, Pass, fail, error, cid)
 
@@ -310,7 +302,10 @@ table       { font-size: 100%; }
     # ENDING
     #
 
-    ENDING_TMPL = """<div id='ending'>&nbsp;</div>"""
+    ENDING_TMPL = """<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>"""
 
 # -------------------- The end of the Template class -------------------
 
@@ -334,7 +329,6 @@ class HTMLTestRunner(Template):
         stylesheet = self._generate_stylesheet()
         heading = self._generate_heading(report_attrs)
         report = self._generate_report(result)
-        print(report)
         ending = self._generate_ending()
         output = self.HTML_TMPL % dict(
             title=saxutils.escape(self.title),
@@ -343,7 +337,8 @@ class HTMLTestRunner(Template):
             report=report,
             ending=ending,
         )
-        self.stream.write(output.encode('utf8'))
+        print(output)
+        #self.stream.write(output.encode('utf8'))
 
     def getReportAttributes(self, result):
         """
@@ -406,11 +401,13 @@ class HTMLTestRunner(Template):
         # for tid, (n, t, o, e) in enumerate(cls_results):
         #     self._generate_report_test(rows, 11, tid, n, t, o, e)
 
-
-
-
+        pas = '%f%%' % round(result["success_count"] / (result["success_count"] + result["failure_count"]) * 100,2)
         # 表格最后一行
         report = self.REPORT_TMPL % dict(
+            summary=pas,
+            faile=str(result["failure_count"]),
+            success_count=str(result["success_count"]),
+            all=result["failure_count"]+result["success_count"],
             test_list=''.join(rows),
             count=str(result["success_count"] + result["failure_count"]),
             Pass=str(result["success_count"]),
