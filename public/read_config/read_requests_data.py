@@ -49,10 +49,16 @@ class ReadRequestsData(object):
 
     def get_requests_header(self, case, token):
         # 将对应的token替换进headers并返回headers
-        headers = self.reader[case.requests_data][1]
-        headers["token"] = token
-        log("获取%s的heasers数据成功" % case.caseNum)
-        return headers
+        try:
+            headers = self.reader[case.requests_data][1]
+            headers["token"] = token
+        except Exception as error:
+            log("发生错误%s,请检查json文件中是否写入headers部分" % error)
+            return None
+        else:
+            log("获取%s的heasers数据成功" % case.caseNum)
+            return headers
+
 
 if __name__ == "__main__":
     with open(r"D:\测试\自动化\TEST-case\data\order.json", "r", encoding="utf-8") as requestsDataFile:

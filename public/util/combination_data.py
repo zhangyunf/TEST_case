@@ -30,7 +30,13 @@ class GetData(object):
             if isinstance(v, dict):
                 self._flatten_dict(v, new_dic)
             else:
-                new_dic[k] = v
+                if k in new_dic.keys():
+                    if type(new_dic[k]) is list:
+                        new_dic[k].append(v)
+                    else:
+                        new_dic[k] = [new_dic[k], v]
+                else:
+                    new_dic[k] = v
         return new_dic
 
     def flatten_dict(self, dic):
@@ -39,10 +45,15 @@ class GetData(object):
         :param dic:
         :return:
         """
-        od = collections.OrderedDict()
+        od = []
         for k, v in sorted(self._flatten_dict(dic).items(), key=lambda x: x[0]):
             if v != "" and v != None:
-                od[k] = v
+                if type(v) == list:
+                    for value in v:
+                        od.append((k, str(value)))
+                else:
+                    od.append((k, str(v)))
+        od.sort()
         res = parse.urlencode(od)
         return res
 
@@ -66,13 +77,17 @@ class GetData(object):
         :param sig:
         :return:read_config
         '''
-        self.data.update({"token": self.token})
+        # 判断是否需要自动添加token
+        is_update_token = True if "token" not in self.data else False
+        if is_update_token:
+            self.data.update({"token": self.token})
         readR = ReadRequest()
         timestamp = int(time.mktime(time.strptime(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S')))
         self.data.update({"ts": timestamp})
         sig = '{}{}'.format(self.flatten_dict(self.data), readR.get_secretKey)
         sig = self.create_sig(sig)
-        self.data.pop("token")
+        if is_update_token:
+            self.data.pop("token")
         self.data.update({"sig": sig})
         return self.data
 

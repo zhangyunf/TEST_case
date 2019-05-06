@@ -6,7 +6,7 @@ from public.util.log import *
 
 class AssertOperation(object):
 
-    def assert_check(self, case, res):
+    def assert_check(self, case, res, data_pool):
         '''
         检查测试点
         :param case: 案例事例
@@ -15,7 +15,7 @@ class AssertOperation(object):
 
         if case.expected_result != None:
             # 拆分断言
-            check_list = case.expected_result.split(",")
+            check_list = case.expected_result.split("|")
             report = ""
             for expect in check_list:
                 if expect != "" and expect != None:
@@ -24,7 +24,7 @@ class AssertOperation(object):
                         if result:
                             log("案例%s执行成功%s" % (case.caseNum, expect))
                         else:
-                            report += "\n检查点%s失败" % expect
+                            report += "\n检查点%s失败\n数据池%s" % (expect, data_pool)
                             log("案例%s执行失败，检查点%s失败" % (case.caseNum, expect))
                     except Exception as error:
                         report += "\n检查点%s失败" % expect

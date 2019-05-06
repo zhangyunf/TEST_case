@@ -33,14 +33,17 @@ class CaseModel(object):
         # 依赖的数据
         self.relevance_field = caselist[10].value
 
+        # 修改数据库
+        self.database = caselist[11].value
+
         # 请求数据
-        self.requests_data = caselist[11].value
+        self.requests_data = caselist[12].value
 
         # 期望值
-        self.expected_result = caselist[12].value
+        self.expected_result = caselist[13].value
 
         # 实际运行结果
-        self.actual_result = caselist[13].value
+        self.actual_result = caselist[14].value
 
     def description(self):
         # 打印案例数据

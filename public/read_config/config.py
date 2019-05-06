@@ -37,7 +37,6 @@ class ReadConfig(ConfigOperation):
     def get_requests_path(self):
         # 获取请求数据配置文件路径
         requests_path = self.get_value("path", "requestsPath")
-
         return requests_path
 
     @property
@@ -47,6 +46,36 @@ class ReadConfig(ConfigOperation):
         requests_data_path = requests_data_path.encode("gbk")
         requests_data_path = requests_data_path.decode("utf-8")
         return requests_data_path
+
+    @property
+    def get_html_report_path(self):
+        # 获取html测试报告路径
+        return self.get_value("path", "htmlReportPath")
+
+    @property
+    def get_sender(self):
+        # 获取发送邮件者
+        return self.get_value("email", "sender")
+
+    @property
+    def get_receviers(self):
+        # 获取接受者
+        return self.get_value("email", "receivers")
+
+    @property
+    def get_email_password(self):
+        # 获取密码
+        return self.get_value("email", "password")
+    @property
+    def get_database_user(self):
+        # 获取数据库网址
+        return self.get_value("database", "user")
+
+    @property
+    def get_database_password(self):
+        # 获取数据库网址
+        return self.get_value("database", "password")
+
 
 
 if __name__ == "__main__":
