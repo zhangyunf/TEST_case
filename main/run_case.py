@@ -2,7 +2,6 @@
 # -*- coding:utf-8 -*-
 # Author:ZhangYunFei
 
-from case.case_singleton import CaseSingleton
 from public.read_config.read_requests_data import ReadRequestsData
 from public.util.combination_data import GetData
 from public.util.my_requests import RunMain
@@ -14,31 +13,19 @@ import time
 
 class RunCase(object):
 
-    def __init__(self):
-        self.case_singleton = CaseSingleton()
-        self.case_singleton.read_case()
+    def __init__(self, case_set, case_singleton):
+        self.case_singleton = case_singleton
         self.assert_operation = AssertOperation()
-        # 开始时间
-        self.__start_time = None
-        # 结束时间
-        self.__end_time = None
-        # 执行总案例
-        self.__total_cases = 0
-        # 通过总案例
-        self.__pass_cases = 0
-        # 失败总案例
-        self.__faile_cases = 0
+        # 用例集
+        self.case_set = case_set
 
     def run_case(self):
         # 执行案例
-        self.__start_time = time.time()
-        read_requests_data = ReadRequestsData()
+        read_requests_data = ReadRequestsData(self.case_set.set_name)
         requests = RunMain()
         host = "http://" + ReadRequest().get_url
-        for case in self.case_singleton.case_list:
+        for case in self.case_set.run_case:
             if case.is_run == "YES":
-                # 统计执行案例数
-                self.__total_cases += 1
                 try:
                     log("开始执行案例%s" % case.caseNum)
                     # 执行sql
@@ -92,16 +79,16 @@ class RunCase(object):
             s.database_operation(case, self.case_singleton.relevance_data)
 
     def create_report(self):
+        '''生成EXCEL测试报告'''
         log("开始生成测试报告")
         from public.util.excel_operation import ExcelOperation
         from public.read_config.config import ReadConfig
         # 打开excel表读取数据
         config = ReadConfig()
         excel_operation = ExcelOperation(config.get_case_path)
-        excel_operation.get_datas("case")
-        reader = excel_operation.get_readers()
+        reader =  excel_operation.get_datas("case")
         # 填写结果
-        for case in self.case_singleton.case_list:
+        for case in self.case_set.run_case:
             if case.is_run == "YES":
                 try:
                     # 如果结果为空则写入执行失败
@@ -124,13 +111,13 @@ class RunCase(object):
 
     def get_cases(self):
         # 计算成功、失败的案例个数
-        for case in self.case_singleton.case_list:
+        for case in self.case_set.run_case:
             if "YES" in case.is_run:
                 if "Success" in case.actual_result:
-                    self.__pass_cases += 1
+                    self.case_set.pass_count += 1
                 elif "False" in case.actual_result:
-                    self.__faile_cases += 1
-        return {"success_cases": self.__pass_cases, "false_cases": self.__faile_cases}
+                    self.case_set.faile_count += 1
+
 
 
 

@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 # Author:ZhangYunFei
-
-from case.case import CaseModel
-from public.util.excel_operation import ExcelOperation
-from public.read_config.config import ReadConfig
+from case.case_excel_operation import CaseExcelOperation
 from public.util.log import *
 
 def SingletonDecorator(cls, *args, **kwargs):
@@ -21,24 +18,28 @@ def SingletonDecorator(cls, *args, **kwargs):
 class CaseSingleton(object):
 
     def __init__(self):
+        # 需要执行的案例
         self.case_list = []
+        # 数据池
         self.relevance_data = {}
 
-    def read_case(self):
-        '''读取case数据'''
-        try:
-            config = ReadConfig()
-            excel_operation = ExcelOperation(config.get_case_path)
-            excel_operation.get_datas("case")
-            reader = excel_operation.get_readers()
-            for k, v in reader.items():
-                if k != "CaseNum" and k != None:
-                    case_data = CaseModel(v)
-                    self.case_list.append(case_data)
-        except Exception as error:
-            log("读取案例数据发生错误%s", error)
-        else:
-            log("读取案例数据成功")
+    def get_case_data(self):
+        case_excel_operation = CaseExcelOperation()
+        self.case_list = case_excel_operation.read_all_case_set()
+
+    def get_all_case_count(self):
+        '''获取通过的案例总数、失败的案例总数、未执行的总数'''
+        all_count = 0
+        pass_count = 0
+        faile_count = 0
+        no_run = 0
+        for case_set in self.case_list:
+            all_count += case_set.count
+            pass_count += case_set.pass_count
+            faile_count += case_set.faile_count
+            no_run += case_set.no_run
+        return [all_count,pass_count, faile_count, no_run]
+
 
     def save_relevance_data(self, case, res):
         '''

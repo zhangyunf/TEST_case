@@ -10,9 +10,9 @@ class ReadRequestsData(object):
 
     # 读取请求数据文件中的数据
 
-    def __init__(self):
+    def __init__(self, set_name):
         # 读取请求数据
-        file_path = ReadConfig().get_requests_data_path
+        file_path = ReadConfig().get_requests_data_path + set_name + ".json"
         self.reader = {}
         try:
             with open(file_path, "r", encoding="utf-8") as requests_data_file:

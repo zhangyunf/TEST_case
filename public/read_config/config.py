@@ -55,17 +55,17 @@ class ReadConfig(ConfigOperation):
     @property
     def get_sender(self):
         # 获取发送邮件者
-        return self.get_value("email", "sender")
+        return self.get_value("send_email", "sender")
 
     @property
     def get_receviers(self):
         # 获取接受者
-        return self.get_value("email", "receivers")
+        return self.get_value("send_email", "receivers")
 
     @property
     def get_email_password(self):
         # 获取密码
-        return self.get_value("email", "password")
+        return self.get_value("send_email", "password")
     @property
     def get_database_user(self):
         # 获取数据库网址

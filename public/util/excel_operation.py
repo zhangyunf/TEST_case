@@ -11,7 +11,6 @@ class ExcelOperation(object):
     def __init__(self, file_path):
         self.file_path = file_path
         self.wb = load_workbook(file_path)
-        self.reader_data = {}
 
     def open_sheet(self, sheet_name):
         '''
@@ -27,16 +26,14 @@ class ExcelOperation(object):
         读取数据，并
         :param sheet_name: sheet页名称
         '''
+        reader_data = {}
         st = self.open_sheet(sheet_name)
         for row in st.rows:
             lis = []
             for i in row:
                 lis.append(i)
-            self.reader_data.update({lis[0].value: lis})
-
-    def get_readers(self):
-        # 返回excel的数据
-        return self.reader_data
+            reader_data.update({lis[0].value: lis})
+        return reader_data
 
     def get_value(self, cell_num):
         # 获取cell的值
