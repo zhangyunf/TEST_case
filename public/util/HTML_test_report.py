@@ -293,7 +293,7 @@ class HTMLTestRunner(Template):
         else:
             status = 'none'
         return [
-            ("执行人员", "张云飞    张聪山"),
+            ("执行人员", "执行人"),
             ('开始时间', result["start_time"]),
             ("结束时间", result["end_time"]),
             ('测试结果', status),
