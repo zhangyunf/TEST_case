@@ -281,11 +281,11 @@ class HTMLTestRunner(Template):
         整理测试结果
         """
         status = []
-        status.append('共计 %d' % (result[0]))
-        status.append('成功 %d' % result[1])
-        status.append('失败 %d' % result[2])
-        status.append('未执行%d' % result[3])
-        pas = round(result[1] / (result[1] + result[2]) * 100, 2)
+        status.append('共计 %d' % (result["count"]))
+        status.append('成功 %d' % result["pass_count"])
+        status.append('失败 %d' % result["faile_count"])
+        status.append('未执行%d' % result["non-execution"])
+        pas = round(result["pass_count"] / (result["pass_count"] + result["faile_count"]) * 100, 2)
         status.append('通过率= %0.2f%%' % pas)
 
         if status:
@@ -294,8 +294,8 @@ class HTMLTestRunner(Template):
             status = 'none'
         return [
             ("执行人员", "张云飞    张聪山"),
-            ('开始时间', "fafasddfadsf"),
-            ("结束时间", "fasfdafds"),
+            ('开始时间', result["start_time"]),
+            ("结束时间", result["end_time"]),
             ('测试结果', status),
         ]
 
@@ -333,7 +333,7 @@ class HTMLTestRunner(Template):
         fail:失败案例数
         cid:第几个用例集
         '''
-        for index, case_set in enumerate(result[4]):
+        for index, case_set in enumerate(result["case"]):
             row = self.REPORT_CLASS_TMPL % dict(
                 style='failClass' if case_set.faile_count > 0 else 'passClass',
                 desc=case_set.set_name,
@@ -350,7 +350,7 @@ class HTMLTestRunner(Template):
 
 
 
-        pas = '%0.2f%%' % round(result[1] / (result[1] + result[2]) * 100,2)
+        pas = '%0.2f%%' % round(result["pass_count"] / (result["pass_count"] + result["faile_count"]) * 100,2)
         # 表格概要+表格最后一行
         '''
         概要
@@ -361,11 +361,11 @@ class HTMLTestRunner(Template):
         '''
         report = self.REPORT_TMPL % dict(
             summary=pas,
-            faile=str(result[2]),
-            success_count=str(result[1]),
-            all=result[0],
+            faile=str(result["faile_count"]),
+            success_count=str(result["pass_count"]),
+            all=result["count"],
             test_list=''.join(rows),
-            norun_count=str(result[3])
+            norun_count=str(result["non-execution"])
         )
         return report
 

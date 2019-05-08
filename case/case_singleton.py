@@ -38,7 +38,10 @@ class CaseSingleton(object):
             pass_count += case_set.pass_count
             faile_count += case_set.faile_count
             no_run += case_set.no_run
-        return [all_count,pass_count, faile_count, no_run]
+        return {"count": all_count,
+                "pass_count": pass_count,
+                "faile_count": faile_count,
+                "non-execution": no_run}
 
 
     def save_relevance_data(self, case, res):
