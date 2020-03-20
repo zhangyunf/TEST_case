@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="318e7a34-022e-4257-a1ab-d3c8fc6f7024" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/requests_config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/requests_config.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +243,16 @@
       <workItem from="1584364632047" duration="180000" />
       <workItem from="1584606728463" duration="88000" />
       <workItem from="1584708625060" duration="142000" />
+      <workItem from="1584709831201" duration="147000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1584709849857</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584709849857</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +274,27 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="314" y="23" width="812" height="800" key="CommitChangelistDialog2" timestamp="1584709847907">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="314" y="23" width="812" height="800" key="CommitChangelistDialog2/-1920.-157.1920.1057/0.23.1440.800@0.23.1440.800" timestamp="1584709847907" />
+    <state x="144" y="92" key="MergeDialog" timestamp="1584709928934">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="144" y="92" key="MergeDialog/-1920.-157.1920.1057/0.23.1440.800@0.23.1440.800" timestamp="1584709928934" />
+    <state x="433" y="146" key="MultipleFileMergeDialog" timestamp="1584709929026">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="433" y="146" key="MultipleFileMergeDialog/-1920.-157.1920.1057/0.23.1440.800@0.23.1440.800" timestamp="1584709929026" />
+    <state x="320" y="163" key="Vcs.Push.Dialog.v2" timestamp="1584709853461">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="320" y="163" key="Vcs.Push.Dialog.v2/-1920.-157.1920.1057/0.23.1440.800@0.23.1440.800" timestamp="1584709853461" />
     <state x="399" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1584364632754">
       <screen x="0" y="23" width="1440" height="800" />
     </state>
